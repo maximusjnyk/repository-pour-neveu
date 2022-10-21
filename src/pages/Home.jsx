@@ -182,7 +182,7 @@ export const Home = () => {
             </div>
           </Col>
           { allProducts.map(item => (
-            <Col lg='3' md='4' key={ item.id } className='mt-5'>
+            <Col lg='3' md='4' sm='6' xs='6' key={ item.id } className='mt-5'>
               <ProductCard item={ item }/>
             </Col>
           )) }
@@ -206,7 +206,7 @@ export const Home = () => {
                 quis provident placeat fugiat!
               </p>
 
-              <ListGroup className='mt-5'>
+              <ListGroup className='mt-4' >
                 <ListGroupItem className='border-0 ps-0'>
                   <p className='choose__us-title d-flex align-items-center gap-2'>
                     <i className='ri-checkbox-circle-line'></i>

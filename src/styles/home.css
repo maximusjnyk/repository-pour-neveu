@@ -110,6 +110,45 @@
         font-size: 0.8rem;
         margin-bottom: 0;
     }
+
+    .feature__subtitle {
+        font-size: 1rem;
+    }
+
+    .feature__text {
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
+
+    .food__category {
+        padding: 15px;
+    }
+
+    .food__category button {
+        padding: 5px 15px;
+        font-size: 0.7rem;
+    }
+
+    .teasty__treat-desc {
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
+
+    .choose__us-title {
+        font-size: 0.8rem;
+    }
+
+    .choose__us-desc {
+        font-size: 0.7rem;
+    }
+
+    .testimonial__subtitle {
+        font-size: 1rem;
+    }
+
+    .testimonial__desc {
+        font-size: 0.8rem;
+    }
 }
 
 @media only screen and (max-width: 576px) {

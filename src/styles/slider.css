@@ -9,3 +9,19 @@
     border-radius: 10px;
     object-fit: cover;
 }
+
+@media only screen and (max-width: 768px){
+    .review__text {
+        font-size: 0.8rem;
+        margin: 20px 0;
+    }
+
+    .slider__content img {
+
+
+    }
+
+    .slider__content h6 {
+        font-size: 0.8rem;
+    }
+}
