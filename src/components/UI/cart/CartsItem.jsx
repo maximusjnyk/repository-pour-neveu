@@ -4,6 +4,7 @@ import {ListGroupItem} from "reactstrap";
 import '../../../styles/cartItem.css'
 import {useDispatch} from "react-redux";
 import {cartActions} from "../../../store/shopping/cartSlice";
+import {createAction} from "@reduxjs/toolkit";
 
 export const CartsItem = ({ item }) => {
 	const dispatch = useDispatch()
@@ -21,6 +22,10 @@ export const CartsItem = ({ item }) => {
 	
 	const decrementItem = () => {
 		dispatch(cartActions.removeItem(id))
+	}
+	
+	const deleteItem = () => {
+		dispatch(cartActions.deleteItem(id))
 	}
 	
 	return (
@@ -45,7 +50,7 @@ export const CartsItem = ({ item }) => {
 						</div>
 					</div>
 					
-					<span className="delete__btn">
+					<span className="delete__btn" onClick={deleteItem}>
             <i class="ri-close-line"></i>
           </span>
 				</div>
