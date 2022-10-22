@@ -1,27 +1,45 @@
 import React from 'react';
 import {ListGroupItem} from "reactstrap";
-import productImg from '../../../assets/images/product_01.1.jpg'
 
 import '../../../styles/cartItem.css'
+import {useDispatch} from "react-redux";
+import {cartActions} from "../../../store/shopping/cartSlice";
 
-export const CartsItem = () => {
+export const CartsItem = ({ item }) => {
+	const dispatch = useDispatch()
+	
+	const {id, title, price, image01, quantity, totalPrice} = item
+	
+	const incrementItem = () => {
+		dispatch(cartActions.addItem({
+			id,
+			title,
+			price,
+			image01,
+		}))
+	}
+	
+	const decrementItem = () => {
+		dispatch(cartActions.removeItem(id))
+	}
+	
 	return (
 		<ListGroupItem className="border-0 cart__item">
 			<div className="cart__item-info d-flex gap-2">
-				<img src={productImg} alt="product-img" />
+				<img src={image01} alt="product-img"/>
 				
 				<div className="cart__product-info w-100 d-flex align-items-center gap-4 justify-content-between">
 					<div>
-						<h6 className="cart__product-title">Burger</h6>
+						<h6 className="cart__product-title">{title}</h6>
 						<p className=" d-flex align-items-center gap-5 cart__product-price">
-							x <span>$123</span>
+							{quantity}x <span>{totalPrice}</span>
 						</p>
 						<div className=" d-flex align-items-center justify-content-between increase__decrease-btn">
-              <span className="increase__btn" >
+              <span className="increase__btn" onClick={incrementItem}>
                 <i class="ri-add-line"></i>
               </span>
-							<span className="quantity"></span>
-							<span className="decrease__btn" >
+							<span className="quantity">{quantity}</span>
+							<span className="decrease__btn" onClick={decrementItem}>
                 <i class="ri-subtract-line"></i>
               </span>
 						</div>
