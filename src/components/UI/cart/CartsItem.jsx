@@ -1,12 +1,11 @@
 import React from 'react';
 import {ListGroupItem} from "reactstrap";
-
 import '../../../styles/cartItem.css'
 import {useDispatch} from "react-redux";
 import {cartActions} from "../../../store/shopping/cartSlice";
-import {createAction} from "@reduxjs/toolkit";
 
-export const CartsItem = ({ item }) => {
+
+export const CartsItem = ({item}) => {
 	const dispatch = useDispatch()
 	
 	const {id, title, price, image01, quantity, totalPrice} = item
