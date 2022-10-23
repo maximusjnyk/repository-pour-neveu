@@ -39,6 +39,8 @@ export const FoodDetalis = () => {
 	
 	const submitHandler = e => {
 		e.preventDefault(e)
+		
+		console.log(entredName, entredEmail, reviewMsg)
 	}
 	
 	
